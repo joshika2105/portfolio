@@ -1,0 +1,70 @@
+<section id="education" class="px-6 py-24 sm:px-10 lg:px-16">
+  <div class="mx-auto max-w-4xl">
+    <p appScrollReveal class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-highlight sm:text-left">
+      {{ t().eyebrow }}
+    </p>
+    <h2 appScrollReveal [revealDelay]="80" class="mt-3 text-center sm:text-left">{{ t().title }}</h2>
+
+    <!-- Column headers — desktop only, mobile shows a per-entry label instead. -->
+    <div class="mt-12 hidden grid-cols-[1fr_2rem_1fr] gap-x-6 sm:grid">
+      <p class="text-right text-xs font-semibold uppercase tracking-[0.1em] text-text-secondary">
+        {{ t().educationLabel }}
+      </p>
+      <div></div>
+      <p class="text-left text-xs font-semibold uppercase tracking-[0.1em] text-text-secondary">
+        {{ t().experienceLabel }}
+      </p>
+    </div>
+
+    <div class="relative mt-6 sm:mt-2">
+      <div class="absolute inset-y-1 left-4 w-px bg-border sm:left-1/2 sm:-translate-x-1/2" aria-hidden="true"></div>
+
+      @for (item of items(); track item.sortKey + item.title; let i = $index) {
+        <div
+          appScrollReveal
+          [revealDelay]="i * 90"
+          class="timeline-entry relative grid grid-cols-[2rem_1fr] items-start gap-x-6 pb-12 last:pb-0 sm:grid-cols-[1fr_2rem_1fr]"
+        >
+          <div class="relative sm:col-start-2">
+            <span
+              class="timeline-dot absolute left-4 top-1.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-highlight ring-4 ring-bg sm:left-1/2"
+            ></span>
+          </div>
+
+          <div
+            [class.sm:col-start-1]="item.type === 'education'"
+            [class.sm:col-start-3]="item.type === 'experience'"
+          >
+            <p class="text-[11px] font-semibold uppercase tracking-[0.1em] text-text-secondary sm:hidden">
+              {{ item.type === 'education' ? t().educationLabel : t().experienceLabel }}
+            </p>
+            <p class="mt-0.5 text-xs font-semibold uppercase tracking-[0.1em] text-highlight sm:mt-0">
+              {{ item.period }}
+            </p>
+            <h3 class="mt-1.5 text-lg">{{ item.title }}</h3>
+
+            @if (item.subtitle) {
+              <p class="mt-0.5 text-sm font-medium text-text">{{ item.subtitle }}</p>
+            }
+
+            @if (item.duration || item.area) {
+              <p class="mt-0.5 text-xs text-text-secondary">
+                @if (item.duration) {
+                  {{ item.duration }}
+                }
+                @if (item.duration && item.area) {
+                  <span class="mx-1.5 text-border">·</span>
+                }
+                @if (item.area) {
+                  {{ item.area }}
+                }
+              </p>
+            }
+
+            <p class="mt-2 text-sm text-text-secondary">{{ item.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,124 @@
+<div class="min-h-dvh bg-bg text-text">
+  <!-- Page header -->
+  <header class="sticky top-0 z-10 border-b border-border bg-bg">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-highlight">Internal · Not final styling</p>
+        <h1 class="text-xl">Design System Preview — v3</h1>
+      </div>
+      <app-theme-toggle />
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl space-y-16 px-6 py-10">
+    <div class="surface p-6">
+      <p class="text-sm leading-relaxed text-text-secondary">
+        <strong class="text-text">Fixed since v2:</strong> the theme toggle icon now uses an
+        adaptive color (burgundy in light mode, pink in dark mode) so it's always visible without
+        hovering. That same adaptive color — <code class="text-highlight">text-highlight</code> —
+        replaces plain burgundy on any label, tab or emphasized text that needs to stay readable in
+        dark mode, instead of burgundy appearing everywhere at fixed contrast.
+        <strong class="mt-2 block text-text">Buttons:</strong> replaced the four earlier concepts
+        with two, combining the filled button you liked with the moving-line animation you liked.
+      </p>
+    </div>
+
+    <!-- APPLIED DESIGN SYSTEM -->
+    <section>
+      <h2 class="text-2xl">Applied Design System</h2>
+      <p class="mt-1 text-sm text-text-secondary">Typography, cards, shadows, borders and spacing as they'll actually ship.</p>
+
+      <div class="surface mt-6 p-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-highlight">Portfolio</p>
+        <h1 class="mt-3">Crafting Software with Intention</h1>
+        <h2 class="mt-4 text-highlight">Selected Works</h2>
+        <p class="mt-4 max-w-2xl text-text-secondary">
+          I design and build thoughtful, high-craft interfaces and the systems behind them —
+          balancing creative direction with clean, modern engineering. This paragraph uses the
+          final body style: Work Sans, 1.0625rem, 1.65 line-height, for readable, comfortable
+          copy at any length.
+        </p>
+
+        <div class="mt-6 grid gap-6 sm:grid-cols-3">
+          <div class="surface p-6">
+            <p class="text-base font-semibold">Case Study One</p>
+            <p class="mt-2 text-sm text-text-secondary">Minimal cream card, soft premium shadow, subtle border.</p>
+          </div>
+          <div class="surface p-6">
+            <p class="text-base font-semibold">Case Study Two</p>
+            <p class="mt-2 text-sm text-text-secondary">Compact modern spacing — 1.5rem padding, 1.5rem gap.</p>
+          </div>
+          <div class="surface p-6">
+            <p class="text-base font-semibold">Case Study Three</p>
+            <p class="mt-2 text-sm text-text-secondary">Same card in dark mode stays warm, never goes black.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DARK MODE CONTRAST CHECK -->
+    <section>
+      <h2 class="text-2xl">Dark Mode Contrast</h2>
+      <p class="mt-1 text-sm text-text-secondary">
+        Toggle to dark and compare — burgundy stays for backgrounds/subtle accents, pink takes over
+        for anything that needs to be read.
+      </p>
+
+      <div class="surface mt-6 p-6">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="rounded-lg border border-highlight px-4 py-2 text-sm font-semibold text-highlight">Active Tab</span>
+          <span class="rounded-lg border border-border px-4 py-2 text-sm text-text-secondary">Inactive Tab</span>
+          <span class="text-sm font-semibold text-highlight">Important label</span>
+          <span class="text-sm text-text-secondary">Secondary label</span>
+        </div>
+        <p class="mt-4 border-t border-border pt-3 text-xs text-text-secondary">
+          All four elements use <code class="text-highlight">text-highlight</code> /
+          <code class="text-highlight">border-highlight</code> — burgundy in light mode, pink in dark.
+        </p>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <section>
+      <h2 class="text-2xl">Buttons</h2>
+      <p class="mt-1 text-sm text-text-secondary">
+        Primary combines the filled look with the moving-line animation. Secondary is the minimal
+        outline. Both animate only on hover.
+      </p>
+
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <div class="surface p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-highlight">Primary Button</p>
+          <div class="mt-4">
+            <button type="button" class="btn-primary">
+              View Project
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+          <p class="mt-4 border-t border-border pt-3 text-xs text-text-secondary">
+            Filled burgundy, cream text. On hover, the fill warms slightly toward pink and the
+            arrow nudges right — the button itself never moves.
+          </p>
+        </div>
+
+        <div class="surface p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-highlight">Secondary Button</p>
+          <div class="mt-4">
+            <button type="button" class="btn-secondary">
+              Learn More
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+          <p class="mt-4 border-t border-border pt-3 text-xs text-text-secondary">
+            Ghost button, adaptive text color. On hover, a soft tinted wash fills in and the border
+            picks up the same adaptive highlight.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

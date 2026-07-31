@@ -1,0 +1,13 @@
+:host {
+  display: contents;
+}
+
+/* Dot pops in shortly after its entry fades in — a one-shot accent, not a loop. */
+.timeline-dot {
+  transform: translateX(-50%) scale(0.4);
+  transition: transform 0.4s ease 0.15s;
+}
+
+.timeline-entry.scroll-reveal--visible .timeline-dot {
+  transform: translateX(-50%) scale(1);
+}

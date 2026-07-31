@@ -1,0 +1,89 @@
+<section id="about" class="px-6 py-24 sm:px-10 lg:px-16">
+  <div class="mx-auto max-w-6xl">
+    <p appScrollReveal class="text-xs font-semibold uppercase tracking-[0.15em] text-highlight">
+      {{ t().eyebrow }}
+    </p>
+    <h2 appScrollReveal [revealDelay]="80" class="mt-3">{{ t().title }}</h2>
+
+    <div class="mt-10 grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+      <!-- Introduction -->
+      <div appScrollReveal [revealDelay]="140" class="text-text-secondary">
+        <div class="space-y-5">
+          @for (paragraph of t().paragraphs; track paragraph) {
+            <p>{{ paragraph }}</p>
+          }
+        </div>
+
+        <!-- Currently learning — a small metadata line, not a separate section -->
+        <div class="mt-8">
+          <p class="text-xs font-semibold uppercase tracking-[0.15em] text-highlight">
+            {{ t().learning.label }}
+          </p>
+          <p class="mt-2 text-sm text-text-secondary">
+            @for (item of t().learning.items; track item; let last = $last) {
+              <span>{{ item }}</span>
+              @if (!last) {
+                <span class="mx-1.5 text-border">•</span>
+              }
+            }
+          </p>
+        </div>
+      </div>
+
+      <!-- Illustration -->
+      <div appScrollReveal [revealDelay]="200" class="mx-auto w-full max-w-sm">
+        <svg viewBox="0 0 320 300" class="w-full" role="img" aria-label="Illustration of a code editor window resting on a stack of books, with a small plant growing from the top">
+          <ellipse cx="160" cy="155" rx="150" ry="130" style="fill: var(--bg-secondary)" />
+
+          <!-- floating accents -->
+          <circle cx="54" cy="70" r="4" style="fill: var(--accent)" />
+          <circle cx="272" cy="40" r="3" style="fill: var(--highlight)" />
+          <path d="M280 192 l8 8 -8 8 -8 -8 Z" style="fill: var(--accent)" opacity="0.8" />
+
+          <!-- stack of books -->
+          <rect x="50" y="240" width="130" height="18" rx="3" style="fill: var(--card); stroke: var(--border); stroke-width: 2" />
+          <rect
+            x="64"
+            y="222"
+            width="105"
+            height="18"
+            rx="3"
+            style="fill: color-mix(in srgb, var(--accent) 25%, var(--card)); stroke: var(--border); stroke-width: 1.5"
+          />
+          <rect
+            x="78"
+            y="204"
+            width="80"
+            height="18"
+            rx="3"
+            style="fill: color-mix(in srgb, var(--primary) 18%, var(--card)); stroke: var(--border); stroke-width: 1.5"
+          />
+
+          <!-- code editor window -->
+          <rect x="110" y="70" width="170" height="150" rx="14" style="fill: var(--card); stroke: var(--border); stroke-width: 2" />
+          <path d="M110 100 H280" style="stroke: var(--border); stroke-width: 2" />
+          <circle cx="126" cy="85" r="3" style="fill: var(--border)" />
+          <circle cx="140" cy="85" r="3" style="fill: var(--border)" />
+          <circle cx="154" cy="85" r="3" style="fill: var(--border)" />
+
+          <rect x="124" y="118" width="70" height="7" rx="3.5" style="fill: var(--secondary)" opacity="0.85" />
+          <rect x="124" y="134" width="108" height="7" rx="3.5" style="fill: var(--accent)" opacity="0.85" />
+          <rect x="124" y="150" width="54" height="7" rx="3.5" style="fill: var(--secondary)" opacity="0.85" />
+          <rect x="124" y="166" width="88" height="7" rx="3.5" style="fill: var(--accent)" opacity="0.7" />
+          <rect x="124" y="182" width="40" height="7" rx="3.5" style="fill: var(--secondary)" opacity="0.6" />
+
+          <!-- small plant growing from the top of the window -->
+          <path d="M210 58 h30 l-4 14 h-22 Z" style="fill: var(--card); stroke: var(--border); stroke-width: 2" />
+          <path
+            d="M225 58 C 208 40 212 20 225 12 C 238 20 242 40 225 58 Z"
+            style="fill: var(--primary)"
+          />
+          <path
+            d="M225 58 C 216 42 218 26 225 18"
+            style="fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>

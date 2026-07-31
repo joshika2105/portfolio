@@ -1,0 +1,12 @@
+:host {
+  display: contents;
+}
+
+.contact-icon-tile {
+  background-color: color-mix(in srgb, var(--highlight) 12%, transparent);
+  transition: background-color 0.15s ease;
+}
+
+.group:hover .contact-icon-tile {
+  background-color: color-mix(in srgb, var(--highlight) 20%, transparent);
+}

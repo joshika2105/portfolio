@@ -1,0 +1,71 @@
+<section id="home" class="relative flex min-h-dvh items-center overflow-hidden px-6 py-28 sm:px-10 lg:px-16">
+  <div class="hero-glow hero-glow--one" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+
+  <div class="mx-auto grid w-full max-w-6xl items-center gap-16 lg:grid-cols-2">
+    <!-- Text column -->
+    <div class="text-center lg:text-left">
+      <p
+        class="hero-anim hero-anim--1 inline-flex items-center rounded-lg border border-border bg-card px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-highlight"
+      >
+        {{ t().badge }}
+      </p>
+
+      <h1 class="hero-anim hero-anim--2 mt-6">
+        {{ t().namePrefix }} <span class="text-highlight">Sarah Joshika</span>
+      </h1>
+
+      <p class="hero-anim hero-anim--3 mt-4 text-xl font-medium text-text-secondary">
+        {{ t().subtitle }}
+      </p>
+
+      <p class="hero-anim hero-anim--4 mx-auto mt-5 max-w-lg text-text-secondary lg:mx-0">
+        {{ t().description }}
+      </p>
+
+      <div class="hero-anim hero-anim--5 mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+        <a href="https://github.com" target="_blank" rel="noopener" class="btn-primary">
+          {{ t().ctaPrimary }}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.97.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.39-5.26 5.67.41.36.78 1.07.78 2.16v3.2c0 .3.2.66.79.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"
+            />
+          </svg>
+        </a>
+        <a href="/cv.pdf" download class="btn-secondary">
+          {{ t().ctaSecondary }}
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Visual column -->
+    <div class="hero-anim hero-anim--visual relative mx-auto w-full max-w-md">
+      <div class="hero-float surface overflow-hidden">
+        <div class="flex items-center gap-1.5 border-b border-border px-4 py-3">
+          <span class="h-2.5 w-2.5 rounded-full bg-border"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-border"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-border"></span>
+        </div>
+        <pre class="overflow-x-auto p-6 text-sm leading-relaxed"><code><span class="text-text-secondary">const</span> <span class="text-highlight">developer</span> = &#123;
+  name: <span class="text-highlight">'Sarah Joshika'</span>,
+  role: <span class="text-highlight">'Software Developer'</span>,
+  stack: [<span class="text-highlight">'Angular'</span>, <span class="text-highlight">'TypeScript'</span>],
+  passion: <span class="text-highlight">'Building things'</span>,
+&#125;;</code></pre>
+      </div>
+    </div>
+  </div>
+</section>

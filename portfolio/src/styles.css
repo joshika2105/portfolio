@@ -1,0 +1,224 @@
+@import 'tailwindcss';
+
+/* Enables `dark:` utility variants driven by the `.dark` class on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Theme tokens: raw values live here, one block per mode.
+ * Every future component should consume these via the `@theme inline`
+ * mapping below (bg-bg, text-text, border-border, etc.) rather than
+ * hard-coded colors.
+ *
+ * Brand palette (fixed across both modes):
+ *   primary burgundy #660033 · secondary cream #F8EBDD · accent pink #FF99CC
+ *   Dark mode is a warm, deep burgundy-plum built from that same palette —
+ *   never pure black — so it reads as "night version of the cream site",
+ *   not a different app.
+ */
+:root {
+  --bg: #f8ebdd;
+  --bg-secondary: #f1ddc8;
+  --card: #fffbf5;
+  --primary: #660033;
+  --secondary: #f8ebdd;
+  --accent: #ff99cc;
+  --text: #2b1620;
+  --text-secondary: #6b4a56;
+  --border: rgba(102, 0, 51, 0.1);
+  --shadow-color: rgba(102, 0, 51, 0.12);
+  --card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 10px 28px -6px var(--shadow-color);
+
+  /*
+   * Adaptive emphasis color: burgundy reads fine as text on the light
+   * cream surfaces, but goes muddy on dark burgundy surfaces — so
+   * "important text" swaps to the pink accent in dark mode instead of
+   * staying burgundy everywhere. Use this (not --primary) for any text
+   * that needs to stay readable in both themes: labels, active tabs,
+   * emphasized headings, icons.
+   */
+  --highlight: var(--primary);
+  /* Text/icon color to place ON TOP of a --highlight fill, so it stays readable either way. */
+  --on-highlight: var(--secondary);
+
+  --font-heading: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Work Sans', -apple-system, sans-serif;
+}
+
+.dark {
+  --bg: #3d1c30;
+  --bg-secondary: #452038;
+  --card: #4c2540;
+  --primary: #660033;
+  --secondary: #f8ebdd;
+  --accent: #ff99cc;
+  --text: #f8ebdd;
+  --text-secondary: #e0c3d2;
+  --border: rgba(255, 153, 204, 0.14);
+  --shadow-color: rgba(20, 4, 12, 0.35);
+  --card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 10px 28px -6px var(--shadow-color);
+  --highlight: var(--accent);
+  --on-highlight: var(--primary);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  --color-highlight: var(--highlight);
+  --color-on-highlight: var(--on-highlight);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  /*
+   * Theme changes transition here — fast (150ms) and uniform across every
+   * themed surface, so light/dark swap together instead of some elements
+   * snapping instantly while others lag, which is what reads as "flicker".
+   * Everything else (cards, buttons) only animates on hover or scroll.
+   */
+  body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(ellipse 60% 40% at 15% -10%, color-mix(in srgb, var(--primary) 7%, transparent), transparent 60%),
+      radial-gradient(ellipse 50% 45% at 100% 15%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 60%),
+      radial-gradient(ellipse 70% 55% at 50% 115%, color-mix(in srgb, var(--primary) 5%, transparent), transparent 70%);
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(ellipse 60% 40% at 15% -10%, color-mix(in srgb, var(--primary) 22%, transparent), transparent 60%),
+      radial-gradient(ellipse 50% 45% at 100% 10%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 50% 120%, color-mix(in srgb, var(--primary) 16%, transparent), transparent 70%);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    transition: color 0.15s ease;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 1.6rem + 3vw, 3.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  }
+
+  p {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--text);
+    transition: color 0.15s ease;
+  }
+}
+
+@layer components {
+  /*
+   * Reusable surface for cards, panels, popovers etc. Colors transition
+   * smoothly between themes; nothing on it animates unless hovered.
+   */
+  .surface {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+  }
+
+  /*
+   * Finalized button pair. Primary fills with --highlight (burgundy in
+   * light mode, pink in dark) so it's never low-contrast against its own
+   * background; secondary is a ghost outline in the same adaptive color.
+   * Motion is hover-only: a brightness lift / tint wash plus an icon nudge.
+   */
+  .btn-primary,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: 0.625rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary svg,
+  .btn-secondary svg {
+    transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .btn-primary:hover svg,
+  .btn-secondary:hover svg {
+    transform: translateX(3px);
+  }
+
+  .btn-primary {
+    background-color: var(--highlight);
+    color: var(--on-highlight);
+    box-shadow: 0 10px 24px -8px var(--shadow-color);
+    transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 14px 30px -6px var(--shadow-color);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--highlight);
+    border-color: var(--border);
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .btn-secondary:hover {
+    background-color: color-mix(in srgb, var(--highlight) 8%, transparent);
+    border-color: var(--highlight);
+  }
+
+  /*
+   * Paired with the ScrollRevealDirective: fades/slides an element in the
+   * first time it enters the viewport, then leaves it alone — one-shot,
+   * never a looping or repeating animation.
+   */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .scroll-reveal--visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
