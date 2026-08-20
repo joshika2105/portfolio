@@ -61,7 +61,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
             "A desktop address book built with JavaFX, following the MVC pattern with a singleton service layer, observable lists, and Java's Stream API. Includes live search and filtering, input validation with custom exceptions, and statistics like contact count and average age that update automatically. Later extended to persist contacts via JDBC with an Apache Derby database.",
           tech: ['Java', 'JavaFX', 'JDBC', 'Apache Derby'],
           imageUrl: 'projects/DemoContacts.gif',
-          downloadUrl: '/AddressBook.zip',
+          downloadUrl: 'AddressBook.zip',
         },
         {
           name: 'Digital Accessibility',
@@ -203,7 +203,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
             "Eine Desktop-Adressbuch-Anwendung mit JavaFX, umgesetzt nach dem MVC-Pattern mit einem Singleton-Service-Layer, Observable Lists und Java's Stream API. Später erweitert um Persistierung der Kontakte via JDBC mit einer Apache-Derby-Datenbank.",
           tech: ['Java', 'JavaFX', 'JDBC', 'Apache Derby'],
           imageUrl: 'projects/DemoContacts.gif',
-          downloadUrl: '/AddressBook.zip',
+          downloadUrl: 'AddressBook.zip',
         },
         {
           name: 'Digitale Barrierefreiheit',
