@@ -17,7 +17,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
         'A creative developer who loves building modern applications and diving into new technologies.',
       ctaPrimary: 'GitHub',
       ctaSecondary: 'CV',
-      cvUrl: '/cv_SarahJoshikaNelson_en.pdf'
+      cvUrl: 'cv_SarahJoshikaNelson_en.pdf'
     },
     about: {
       eyebrow: 'Get to know me',
@@ -52,7 +52,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
           description:
             "Marketing website for Lumeso, built with Vue, GSAP animations, and Storyblok as a headless CMS. Focused on smooth scroll-based animations and a clean, componentized structure that let the team manage content independently.",
           tech: ['Vue', 'GSAP', 'Storyblok'],
-          imageUrl: '/projects/lumeso.png',
+          imageUrl: 'projects/lumeso.png',
           demoUrl: 'https://www.lumeso.com',
         },
         {
@@ -60,7 +60,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
           description:
             "A desktop address book built with JavaFX, following the MVC pattern with a singleton service layer, observable lists, and Java's Stream API. Includes live search and filtering, input validation with custom exceptions, and statistics like contact count and average age that update automatically. Later extended to persist contacts via JDBC with an Apache Derby database.",
           tech: ['Java', 'JavaFX', 'JDBC', 'Apache Derby'],
-          imageUrl: '/projects/DemoContacts.gif',
+          imageUrl: 'projects/DemoContacts.gif',
           downloadUrl: '/AddressBook.zip',
         },
         {
@@ -68,7 +68,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
           description:
             "Internship project at BMD Software: a prototype for accessible PDF processing, built and tested with two different approaches — one in Angular and Python, another integrated into BMD's BMDgo product using C#.",
           tech: ['Python', 'FastAPI', 'Angular', 'TypeScript', 'PDF Parsing', 'C#'],
-          imageUrl: '/projects/BMD.png',
+          imageUrl: 'projects/BMD.png',
         },
       ],
     },
@@ -159,7 +159,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
         'Ein kreativer Entwickler, der gerne moderne Anwendungen baut und neue Technologien erkundet.',
       ctaPrimary: 'GitHub',
       ctaSecondary: 'Lebenslauf',
-      cvUrl: '/cv_SarahJoshikaNelson_de.pdf'
+      cvUrl: 'cv_SarahJoshikaNelson_de.pdf'
     },
     about: {
       eyebrow: 'Über mich',
@@ -194,7 +194,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
           description:
             'Marketing-Website für Lumeso, umgesetzt mit Vue, GSAP-Animationen und Storyblok als Headless-CMS.',
           tech: ['Vue', 'GSAP', 'Storyblok'],
-          imageUrl: '/projects/lumeso.png',
+          imageUrl: 'projects/lumeso.png',
           demoUrl: 'https://www.lumeso.com',
         },
         {
@@ -202,7 +202,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
           description:
             "Eine Desktop-Adressbuch-Anwendung mit JavaFX, umgesetzt nach dem MVC-Pattern mit einem Singleton-Service-Layer, Observable Lists und Java's Stream API. Später erweitert um Persistierung der Kontakte via JDBC mit einer Apache-Derby-Datenbank.",
           tech: ['Java', 'JavaFX', 'JDBC', 'Apache Derby'],
-          imageUrl: '/projects/DemoContacts.gif',
+          imageUrl: 'projects/DemoContacts.gif',
           downloadUrl: '/AddressBook.zip',
         },
         {
@@ -210,7 +210,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
           description:
             'Praktikumsprojekt: Entwicklung von zwei Prototypen zur Barrierefreiheit (Angular/Python und C# für BMD Go), um PDF-Inhalte für Screenreader und assistive Technologien zugänglich zu machen. Einsatz von LLMs zur Optimierung der PDF-Lesbarkeit. Meine Beiträge: Aufbau der Backend-Datenverarbeitung, Strukturierung von PDF-Daten und Umsetzung der barrierefreien Frontend-Darstellung.',
           tech: ['Python', 'FastAPI', 'Angular', 'TypeScript', 'PDF Parsing', 'C#'],
-          imageUrl: '/projects/BMD.png',
+          imageUrl: 'projects/BMD.png',
         },
       ],
     },
