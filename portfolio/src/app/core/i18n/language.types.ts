@@ -20,6 +20,7 @@ export interface Translations {
     description: string;
     ctaPrimary: string;
     ctaSecondary: string;
+    cvUrl: string;
   };
   about: {
     eyebrow: string;
@@ -36,6 +37,7 @@ export interface Translations {
     title: string;
     githubLabel: string;
     demoLabel: string;
+    downloadLabel: string;   
     viewAll: string;
     allTitle: string;
     allSubtitle: string;
@@ -55,7 +57,7 @@ export interface Translations {
     title: string;
     subtitle: string;
     emailLabel: string;
-    githubLabel: string;
+    instagramLabel: string;   
     phoneLabel: string;
   };
   footer: {

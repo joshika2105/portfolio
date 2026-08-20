@@ -6,7 +6,7 @@ interface ContactMethod {
   label: string;
   value: string;
   href: string;
-  icon: 'email' | 'github' | 'phone';
+  icon: 'email' | 'instagram' | 'phone';
 }
 
 @Component({
@@ -30,10 +30,10 @@ export class ContactComponent {
         icon: 'email',
       },
       {
-        label: t.githubLabel,
-        value: 'github.com/nelsonsarahjoshika',
-        href: 'https://github.com/nelsonsarahjoshika',
-        icon: 'github',
+        label: t.instagramLabel,
+        value: '@joshikasn',
+        href: 'https://instagram.com/joshikasn',
+        icon: 'instagram',
       },
       {
         label: t.phoneLabel,

@@ -79,10 +79,15 @@
 @layer base {
   html {
     color-scheme: light;
+    scroll-behavior: smooth;
   }
 
   html.dark {
     color-scheme: dark;
+  }
+
+  section {
+    scroll-margin-top: 5rem; /* Höhe deiner Navbar anpassen */
   }
 
   /*
